@@ -1,0 +1,29 @@
+.answer {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(51,51,51,.901961);
+    box-sizing: border-box;
+    border-bottom: 1px solid #646464e6;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.answer:hover {
+    background-color: #646464e6
+}
+.answer-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: "1px solid white";
+}
+
+.answer-indicator-true {
+    background-color: green;
+}
+
+.answer-indicator-false {
+    background-color: red;
+}

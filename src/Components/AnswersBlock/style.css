@@ -1,0 +1,15 @@
+.answers-block {
+    flex: 1 1 30%;
+    margin-right: 15px;
+    max-width: 50%;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
