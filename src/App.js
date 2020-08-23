@@ -9,6 +9,7 @@ import Question from "./Components/Question/Question";
 import birdsData from "./controller/birdsData"
 import Random from "./controller/random"
 import AnswersBlock from "./Components/AnswersBlock/AnswersBlock";
+import Description from "./Components/Description/Description";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ class App extends Component {
         sound: "",
       },
       answerOptions: [],
+      nextQuestion: false
     };
 
 
@@ -65,9 +67,10 @@ class App extends Component {
         <Header score={this.state.score}/>
         <ListMenu stage={this.state.stage}/>
         <Question name={this.state.questionData.name} sound={this.state.questionData.sound}/>
-        <>
-          <AnswersBlock answerOptions={this.state.answerOptions}/> 
-        </>
+        <div className="row">
+          <AnswersBlock answerOptions={this.state.answerOptions}/>
+          <Description nextQuestion={this.state.nextQuestion}/>
+        </div>
       </div>
     );
   }

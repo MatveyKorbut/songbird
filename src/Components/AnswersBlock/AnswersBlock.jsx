@@ -11,7 +11,7 @@ export default (props) => {
       <ul>
         {answerOptions.map((item, idx) => {
           return (
-              <Answer name={item.name} id={idx}/>
+              <Answer key={idx} name={item.name} id={idx}/>
           )
         })}
         </ul>

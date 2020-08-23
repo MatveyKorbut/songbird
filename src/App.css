@@ -8,7 +8,10 @@
   color: #fff;
 }
 
-
+.row {
+  display: flex;
+  flex-direction: row;
+}
   
 html {
   box-sizing: border-box;
