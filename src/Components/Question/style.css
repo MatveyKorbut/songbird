@@ -1,0 +1,29 @@
+img {
+    padding: 1rem;
+    width: 200px;
+    height: 155px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.question-block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 15px 0px;
+    background-color: #303030;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.question-block .info {
+    flex: 1 1 auto;
+    padding: 0 25px;
+}
+
+.question-block .player {
+    width: 100%;
+    margin: 15px 0;
+    outline: none;
+}

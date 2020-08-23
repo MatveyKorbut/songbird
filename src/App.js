@@ -4,6 +4,7 @@ import "./App.css";
 
 import Header from "./Components/Header/Header";
 import ListMenu from "./Components/ListMenu/ListMenu";
+import Question from "./Components/Question/Question";
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
       <div className="App">
         <Header score={this.state.score}/>
         <ListMenu stage={this.state.stage}/>
+        <Question />
       </div>
     );
   }
