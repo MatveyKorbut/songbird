@@ -3,12 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Header from "./Components/Header/Header";
+import ListMenu from "./Components/ListMenu/ListMenu";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       score: 0,
+      stage: 0
     };
   }
 
@@ -16,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header score={this.state.score}/>
+        <ListMenu stage={this.state.stage}/>
       </div>
     );
   }

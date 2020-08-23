@@ -1,0 +1,32 @@
+
+.list {
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 8px 0;
+    overflow: hidden;
+    list-style-type: none;
+    
+    border-radius: 5px;
+}
+
+.list-item {
+    background-color: #008966;
+    border-color: #007c5d;
+    flex: auto;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+}
+
+.list-item-active {
+    background-color: #00bc8c;
+    border-color: #007c5d;
+    flex: auto;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    
+}
