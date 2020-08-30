@@ -18,16 +18,19 @@ class App extends Component {
       stage: 0,
       secretBird: 0,
       correctAnswer: null,
+      clicked: 0,
       questionData: {
         name: "",
         img: "",
         sound: "",
+        showName: "",
+        showImg: "",
       },
       answerOptions: [],
-      nextQuestion: false
+      nextQuestion: false,
+      // showBirdDescription: null,
+      // birdData: [],
     };
-
-
   }
 
   componentDidMount() {
@@ -38,25 +41,58 @@ class App extends Component {
 
     const random =  Random(0,5)
     
-    let ans = birdsData[lvl];
-    console.log("ans", ans)
-    this.setState()
 
     this.setState({
       secretBird: random,
       questionData: {
-        name: "000000",
+        name: "*****",
         img: "",
-        sound: birdsData[lvl][random].audio
+        showName: birdsData[lvl][random].name,
+        showImg: birdsData[lvl][random].image,
+        sound: birdsData[lvl][random].audio,
+        species: birdsData[lvl][random].species,
+        description: birdsData[lvl][random].species,
       },
       answerOptions: birdsData[lvl],
     });
+  }
 
-    
+  checkAnswer = (idx) => {
+    const {
+      nextQuestion, secretBird, stage
+    } = this.state;
+    if (!nextQuestion) {
+      console.log("check")
 
-
-
-    // console.log("bird: ", this.state.secretBird, " ", birdsData[lvl][this.state.secretBird].name)
+  
+      const data = birdsData[stage][idx];
+  
+      console.log("App -> checkAnswer -> data", data)
+      
+      this.setState( {...this.state, birdData: data}, () => {
+          console.log("birdData ", this.state.birdData)
+  
+      } )
+      
+      this.setState( {clicked: this.state.clicked + 1})
+  
+      const clicked = this.state.clicked;
+      // console.log("App -> checkAnswer -> clicked", clicked)
+  
+      if (nextQuestion) {
+        return;
+      }
+      if (idx === secretBird) {
+        this.setState({...this.state, nextQuestion: true, score: this.state.score + 5 - clicked, clicked: 0});
+        const questionPlayer = document.querySelector(".info audio");
+        questionPlayer.pause();
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
 
   }
 
@@ -66,10 +102,15 @@ class App extends Component {
       <div className="App">
         <Header score={this.state.score}/>
         <ListMenu stage={this.state.stage}/>
-        <Question name={this.state.questionData.name} sound={this.state.questionData.sound}/>
+        <Question 
+          nextQuestion={this.state.nextQuestion} 
+          questionData={this.state.questionData}
+        />
         <div className="row">
-          <AnswersBlock answerOptions={this.state.answerOptions}/>
-          <Description nextQuestion={this.state.nextQuestion}/>
+          <AnswersBlock answerOptions={this.state.answerOptions} checkAnswer={this.checkAnswer}/>
+          <Description 
+            birdData = {this.state.birdData ? this.state.birdData : {}}
+          />
         </div>
       </div>
     );

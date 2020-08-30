@@ -1,16 +1,48 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css";
-import { Typography, Link } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
-export default (props) => {
-  const { name, id } = props;
+// export default (props) => {
+ 
+// };
 
-  return (
-    <li className="answer">
-      <Typography variant="h6">
-        <span className="answer-indicator" />
-        {name}
-      </Typography>
-    </li>
-  );
-};
+class Answer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      spanClass: "answer-indicator "
+    }
+  }
+  
+  changeSpanClass = (bool) => {
+    const changeString = (bool ? "answer-indicator answer-indicator-true" : "answer-indicator answer-indicator-false")
+    this.setState({spanClass: changeString})
+  } 
+  render() {
+    const { name, id, checkAnswer } = this.props;
+
+    // const spanRef = useRef(null)
+    let color = null;
+    return (
+      <>
+      <li 
+        className="answer" 
+        onClick={()=>{
+          color = checkAnswer(id);
+          this.changeSpanClass(color)
+        }}
+      >
+        <Typography variant="h6">
+          <span 
+            className={this.state.spanClass}
+            // ref={spanRef}
+          />
+          {name}
+        </Typography>
+      </li>
+      </>
+    );
+  }
+}
+
+export default Answer
