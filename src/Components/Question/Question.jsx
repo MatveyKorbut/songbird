@@ -1,8 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Typography, List, ListItem } from "@material-ui/core";
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
+import ReactAudioPlayer from 'react-audio-player';
 
 import defaultBird from "./img/defaultBird.jpg";
 
@@ -13,11 +12,14 @@ export default (props) => {
   
   const style = {
     backgroundColor: "#303030",
+    width: "100%"
   };
   
   return (
     <div className="question-block">
-      <img src={ nextQuestion ?  showImg : defaultBird} alt="bird" />
+      <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <img src={ nextQuestion ?  showImg : defaultBird} alt="bird"  style={{padding: "0 0"}}/>
+      </div>
       <div className="info">
         <List>
           <ListItem>
@@ -34,21 +36,11 @@ export default (props) => {
             
           </ListItem>
           <ListItem>
-            <AudioPlayer
+            <ReactAudioPlayer
               id = "questionAudio"
               src={sound}
-              pause={nextQuestion}
-              autoPlay={false}
-              showJumpControls={false}
-              customAdditionalControls={[]}
+              controls
               style={style}
-              // onListen={(e)=> {
-              //   console.log("player ", e.target.paused);
-              //   if (nextQuestion) {
-              //     e.target.pause();
-              //   }
-              // }}
-              // Try other props!
             />
           </ListItem>
         </List>

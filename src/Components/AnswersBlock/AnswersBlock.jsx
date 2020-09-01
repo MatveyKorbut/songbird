@@ -4,18 +4,21 @@ import Answer from "../Answer/Answer";
 
 
 class AnswerBlock extends Component {
+  
   render() {
-  const {answerOptions, checkAnswer} = this.props
+  const {answerOptions, checkAnswer, next, checkedAnswers} = this.props
   return (
     <div className="answers-block">
       <ul>
         {answerOptions.map((item, idx) => {
           return (
               <Answer 
-                key={idx} 
+                key={idx}
+                next={next}
                 name={item.name} 
                 id={idx}
                 checkAnswer={checkAnswer}
+                checkedAnswers={checkedAnswers}
                 />
           )
         })}

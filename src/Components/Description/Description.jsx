@@ -1,18 +1,20 @@
 import React from "react";
 import "./style.css";
 import { Typography } from "@material-ui/core";
-import AudioPlayer from "react-h5-audio-player";
+import ReactAudioPlayer from 'react-audio-player';
 
 export default (props) => {
-  const {birdData} = props;
+  const {birdData, checkedAnswers} = props;
   const {image, name, species, description, audio} = birdData;
   const style = {
     backgroundColor: "#303030",
+    display: "block",
+    width: "100%"
   };
 
   return (
     <div className="block">
-      { name ? (
+      { name && checkedAnswers.length ? (
         <div>
          <div className="box">
             <img
@@ -30,14 +32,15 @@ export default (props) => {
 
             </div>
           </div>
-          <AudioPlayer
+          <ReactAudioPlayer
               src={audio}
               autoPlay={false}
+              controls
               showJumpControls={false}
               customAdditionalControls={[]}
               style={style}
             />
-          <div className="text_wrapper">
+          <div className="text-wrapper">
             {description}
           </div>
         </div>
