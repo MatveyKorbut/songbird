@@ -39,8 +39,6 @@ class App extends Component {
       answerOptions: [],
       nextQuestion: false,
       gameOver: false
-      // showBirdDescription: null,
-      // birdData: [],
     };
   }
 
@@ -117,7 +115,6 @@ class App extends Component {
       answerOptions: [],
       nextQuestion: false,
     });
-    // document.querySelectorAll("span.answer-indicator").forEach((item) => {item.classList.remove("answer-indicator-true");item.classList.remove("answer-indicator-false");});
   };
 
   nextLvl = () => {
@@ -161,8 +158,6 @@ class App extends Component {
       answerOptions: [],
       nextQuestion: false,
       gameOver: false
-      // showBirdDescription: null,
-      // birdData: [],
     });
     this.startLvl(0)
   }
