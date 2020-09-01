@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d3b5c667.chunk.css",
+    "main.js": "/static/js/main.9ad49b0c.chunk.js",
+    "main.js.map": "/static/js/main.9ad49b0c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3ffde9c1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3ffde9c1.js.map",
+    "static/js/2.11e138ad.chunk.js": "/static/js/2.11e138ad.chunk.js",
+    "static/js/2.11e138ad.chunk.js.map": "/static/js/2.11e138ad.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4bbf9730342211bcb740aaa9739ccfe0.js": "/precache-manifest.4bbf9730342211bcb740aaa9739ccfe0.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.d3b5c667.chunk.css.map": "/static/css/main.d3b5c667.chunk.css.map",
+    "static/js/2.11e138ad.chunk.js.LICENSE.txt": "/static/js/2.11e138ad.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/static/media/SongBirdLogo.4f82cd73.svg",
+    "static/media/defaultBird.jpg": "/static/media/defaultBird.06a46938.jpg",
+    "static/media/error.mp3": "/static/media/error.bffd1a6f.mp3",
+    "static/media/gameOver.mp3": "/static/media/gameOver.3d051faa.mp3",
+    "static/media/win.mp3": "/static/media/win.0022a5bd.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ffde9c1.js",
+    "static/js/2.11e138ad.chunk.js",
+    "static/css/main.d3b5c667.chunk.css",
+    "static/js/main.9ad49b0c.chunk.js"
+  ]
+}
